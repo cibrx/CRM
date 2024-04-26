@@ -21,6 +21,7 @@ const isEmailExists = async (email) => {
 
 const createUser = async (email, hashedPassword) => {
     try {
+        const users_db = await usersCollection()
         users_db.insertOne({
             'date': Date.now(),
             'email': email,
